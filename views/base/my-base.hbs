@@ -1,0 +1,35 @@
+<div class='jumbotron'>
+    <h2>Your Base</h2>    
+</div>
+<div class='container'>
+    <div class='col-md-3'>
+        {{>sidebar}}
+    </div>
+    <div class='col-md-9'>
+        {{#if is_managing_teacher}}
+            <div class='alert alert-info'>
+                Would you like to publish a new course?
+                <span class='pull-right'>
+                    <a href='/course-designer'>Visit Course Designer</a>
+                </span>
+            </div>
+        {{/if}}
+        <div class='panel panel-default'>
+            <div class='panel-heading'>Base Courses</div>
+            <div class='panel-body'>
+                {{#if has_courses}}
+                
+                {{else}}
+                    At this time, there are no courses published.
+                {{/if}}
+            </div>
+        </div>
+        <div class='panel panel-default'>
+            <div class='panel-heading'>Information about this base</div>
+            <div class='panel-body'>
+                This base is managed by {{teacher.name}} for {{teacher.school}}
+            </div>
+        </div>
+    </div>
+</div>
+    

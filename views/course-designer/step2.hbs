@@ -1,0 +1,27 @@
+<div class='jumbotron'>
+    <h2>Course Designer</h2>    
+</div>
+<div class='container'>
+    <div class='col-md-3'>{{>sidebar}}</div>
+    <div class='col-md-9'>
+        <div class='panel panel-default'>
+            <div class='panel-heading'>
+                Step 2 Of Designer    
+            </div>
+            <div class='panel-body'>
+                <b>Step 2 - Add the content of the topics that make up the course.</b> <br>
+                Each panel below holds the settings for your chosen number of courses.
+                There can be up to three final test questions.
+            </div>
+        </div>
+        <form>
+        {{#each course.topics}}
+            <div class='panel panel-default'>
+                <div class='panel-heading'>Topic {{@index}}</div>
+                <div class='panel-body'>
+                    
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>

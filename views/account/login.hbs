@@ -1,0 +1,30 @@
+<div class='col-md-4 col-md-offset-4'>
+    <div class='well'>
+        <h1 class='text-center'>Account Login</h1>
+        {{#if login_error}}
+            <br>
+            <div class='alert alert-danger'>
+                <b>Login Incorrect</b>
+                Please try again
+            </div>
+        {{/if}}
+        <form method='post' action='/account/login'>
+            <div class='input-group'>
+                <span class='input-group-addon'>Username</span>
+                <input type='username' name='username' class='form-control'>
+            </div>
+            <br>
+            <div class='input-group'>
+                <span class='input-group-addon'>Password</span>
+                <input type='password' name='password' class='form-control'>
+            </div>
+            <br>
+            <a href='/account/register'>No Acocunt? Register Here</a>
+            <br>
+            <div class='form-group'>
+                <input type='submit' class='btn btn-primary pull-right' value='Login'>
+            </div>
+            <br>
+        </form>
+    </div>
+</div>

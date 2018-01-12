@@ -1,0 +1,35 @@
+<div class='jumbotron'>
+    <h2>{{course.name}}</h2>        
+</div> 
+<div class='container'>
+    <div class='page-header'>
+        <a href='/'>Go back</a>        
+    </div>
+   <div class='row'>
+        <div class='col-md-3'> 
+            {{>sidebar}}
+        </div>
+        <div class='col-md-9'>
+            <div class='col-md-4'>
+                <img src='{{course.thumbnail_image}}' width='100%'>
+            </div>
+            <div class='col-md-4'>
+                {{course.short_description}}
+            </div>
+            <div class='col-md-4'>
+                <div class='panel panel-default'>
+                    <div class='panel-heading'>Ready to go?</div>
+                    <div class='panel-body'>
+                        <form>
+                            <input type='submit' class='btn btn-success form-control' value='Start Course'>
+                        </form>
+                        <form method='post' action='/course/bookmark'>
+                            <input type='hidden' name='course_id' value='{{course._id}}'>
+                            <input type='submit' class='btn btn-primary form-control' value='Bookmark Course'>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </div>
+</div> 

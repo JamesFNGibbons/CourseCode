@@ -1,0 +1,41 @@
+<div class='jumbotron'>
+    <h2>Your Bookmarked Courses</h2>    
+</div>
+<div class='container'>
+    <div class='col-md-3'>{{>sidebar}}</div>
+    <div class='col-md-9'>
+        {{#if no_courses}}
+            <div class='panel panel-default'>
+                <div class='panel-heading'>No Bookmarked Courses</div>
+                <div class='panel-body'>
+                    <h3 class='text-danger'>You have not bookmarked any courses.</h3>
+                    <p>
+                        You have not bookmarked any courses. Bookmarking a course is easy, 
+                        simply view the course, and select the blue button on the right hand 
+                        side of the page called 'Bookmark Course'
+                    </p>
+                    <a href='/'>View your courses</a>
+                </div>
+            </div>
+        {{/if}}
+        {{#unless no_courses}}
+            <div class='panel panel-default'>
+                <div class='panel-heading'>Bookmarked Courses</div>
+                <div class='panel-body'>
+                    <div class='row'>
+                        {{#each courses}}
+                            <div class='col-md-4'>
+                                <div class='thumbnail'>
+                                    <img src='{{thumbnail_image}}' class='center-block' width='50%'>
+                                    <h4>{{name}}</h4>
+                                    <p>{{short_description}}</p>
+                                    <a href='/course/view/{{_id}}'>View Course</a>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        {{/unless}}
+    </div>
+</div>

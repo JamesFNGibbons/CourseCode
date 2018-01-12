@@ -1,0 +1,41 @@
+<div class='jumbotron'>
+    <h2>Your Courses</h2>    
+</div>
+<div class='container'>
+    <div class='col-md-3'>
+        {{>sidebar}}
+    </div>
+    <div class='col-md-9'>
+        {{#if is_teacher}}
+            <div class='alert alert-info'>
+                You are signed in using a teacher account.
+                <span class='pull-right text-right'>
+                    <b><a href='/teacher'>Visit Teacher Center</a></b>
+                </span>
+            </div>
+        {{/if}}
+        {{#if has_courses}}
+            <div class='panel panel-default'>
+                <div class='panel-heading'>Your Courses</div>
+                <div class='panel-body'></div>
+            </div>
+        {{/if}}
+        <div class='panel panel-default'>
+            <div class='panel-heading'>Available Courses</div>
+            <div class='panel-body'>
+                <div class='row'>
+                    {{#each courses}}
+                        <div class='col-md-4'>
+                            <div class='thumbnail'>
+                                <img src='{{thumbnail_image}}' class='center-block' width='50%'>
+                                <h4>{{name}}</h4>
+                                <p>{{short_description}}</p>
+                                <a href='/course/view/{{_id}}'>View Course</a>
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>

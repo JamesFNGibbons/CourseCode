@@ -1,0 +1,27 @@
+<div class='jumbotron'>
+    <h2>Teacher Center</h2>    
+</div>
+<div class='container'>
+    <div class='col-md-3'>
+        {{>sidebar}}
+    </div>    
+    <div class='col-md-9'>
+        <div class='panel panel-default'>
+            <div class='panel-heading'>Overview Of Your Base</div>
+            <div class='panel-body'>
+                <div class='col-md-3 well'>
+                    <i>Total Base Members</i>
+                    <h1>{{students.length}}</h1>
+                </div>
+                <div class='col-md-3 well'>
+                    <i>Total Published Courses</i>
+                    <h1>{{courses.length}}</h1>
+                </div>
+                <div class='col-md-3 well'>
+                    <i>Your Base Join Code</i>
+                    <h1>{{user.base_id}}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+<div class='jumbotron'>
+    <h2>Course Designer</h2>    
+</div> 
+<div class='container'>
+    <div class='col-md-3'>
+        {{>sidebar}}
+    </div>    
+    <div class='col-md-9'>
+        {{#if has_unsaved_cousrse}}
+            <div class='modal show'>
+                <div class='modal-dialog'>
+                    <div class='modal-content'>
+                        <div class='modal-header'>You have an unsaved course</div>
+                        <div class='modal-body'>
+                            You currently have an unsaved course. Would you like to continue
+                            creating this course, or start again?
+                        </div>
+                        <div class='modal-footer'>
+                            <a href='/course-designer/delete-unsaved' class='btn btn-default'>
+                                Delete &amp; Start Again
+                            </a>
+                            <a class='btn btn-primary' href='/course-designer/continue'>
+                                Continue Editing
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{/if}}
+        <form action='/course-designer/step/1' method='post' enctype='multipart/form-data'>
+            <div class='panel panel-default'>
+                <div class='panel-heading'>Course Details</div>
+                <div class='panel-body'>
+                    <div class='row'>
+                        <div class='col-md-6'>
+                            <div class='form-group'>
+                                <label>Course Name</label>
+                                <input type='text' name='name' class='form-control'>
+                            </div>
+                        </div>
+                        <div class='col-md-6'>
+                            <div class='form-group'>
+                                <label>Thumbnail Image</label>
+                                <input type='file' name='thumbnail' class='form-control'>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='panel panel-default'>
+                <div class='panel-heading'>Course Settings</div>
+                <div class='panel-body'>
+                    <div class='row'>
+                        <div class='col-md-6'>
+                            <div class='form-group'>
+                                <label>Course Description</label>
+                                <textarea name='description' class='form-control'></textarea>
+                            </div>
+                        </div>
+                        <div class='col-md-6'>
+                            <div class='form-group'>
+                                <label>Number of topics in course</label>
+                                <input type='number' value='1' name='topics' class='form-control'>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type='submit' class='btn btn-primary pull-right' value='Next Step'>
+        </form>
+    </div>
+</div> 

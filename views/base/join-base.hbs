@@ -1,0 +1,36 @@
+<div class='jumbotron'>
+    <h2>Join A Base</h2>    
+</div>
+<div class='container'>
+    <div class='col-md-3'>
+        {{>sidebar}}
+    </div>    
+    <div class='col-md-9'>
+        <div class='panel panel-default'>
+            <div class='panel-heading'>Base Information</div>
+            <div class='panel-body'>
+                <div class='row'>
+                    <div class='col-md-6'>
+                        <form>
+                            <div class='form-group'>
+                                <lable>Join Code</lable>
+                                <br>
+                                <input type='text' class='input-lg' name='join_code'>
+                            </div>
+                            <div class='form-group'>
+                                <input type='submit' class='btn btn-success' value='Join Class'>
+                            </div>
+                        </form>
+                    </div>
+                    <div class='col-md-6'>
+                        <i>
+                            You will apear to your teacher as 
+                            {{user.name}} ({{user.username}}),
+                            when you join their base
+                        </i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

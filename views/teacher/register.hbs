@@ -1,0 +1,36 @@
+<div class='jumbotron'>
+    <h2>Register as teacher</h2>    
+</div>
+<div class='col-md-4 col-md-offset-4'>
+    <div class='well'>
+        <form method='post' action='/teacher/register'> 
+            <div class='form-group'>
+                <label>Your Name</label>
+                <input type='text' name='name' class='form-control'>
+            </div>
+            <div class='form-group'>
+                <label>Your School</label>
+                {{#each schools}}
+                    <select name='school' class='form-control'>
+                        <option default disabled>-- Choose From List --</option>
+                        <option value='{{name}}'>{{name}}</option>
+                    </select>
+                {{else}}
+                    <input type='text' name='school' placeholder='Enter School Name' class='form-control'>
+                {{/each}}
+            </div>
+            <div class='form-group'>
+                <label>Your Email - <i>This will be used as your login username</i></label>
+                <input type='email' name='email' class='form-control'>
+            </div>
+            <div class='form-group'>
+                <label>Choose Password</label>
+                <input type='password' name='password' class='form-control'>
+            </div>
+            <div class='form-group'>
+                <input type='submit' class='btn btn-primary pull-right' value='Complete Registration'>
+            </div>
+            <br>
+        </form>
+    </div>
+</div> 
